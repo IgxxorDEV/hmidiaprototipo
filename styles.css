@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+#header {
+    background-color: #ffc220;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container img {
+    max-height: 80px; /* Ajuste conforme necessário */
+    margin-left: 20px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 18px;
+    background-color: #111010;
+    border-radius: 80px;
+    cursor: pointer;
+    top: 20%; /* Reduz a posição em 20% */
+    margin-top: 500px;
+}
+
+
+.toggle-switch::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: rgb(10, 10, 10);
+    transition: 0.3s;
+}
+
+#show-form-toggle:checked + .toggle-switch::before {
+    transform: translateX(20px);
+    background-color: rgb(52, 155, 52);
+}
+
+
+.view-messages-button {
+    padding: 10px;
+    width: 90px;
+    height: 30px;
+    background-color: #2e2c28;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-right: 10px;
+    font-size: 16px;
+
+}
+
+.message-container {
+    max-width: 800px; /* Aumentei a largura para melhorar a visibilidade */
+    padding: 120px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: center;
+    margin-top: 30px; /* Aumentei a margem superior para separar do histórico */
+    margin-bottom: 80px;
+    font-size: 50px;
+}
+
+
+/* Ajuste para diminuir a área de exibição do histórico em 40% */
+#history-container {
+    max-height: 30%; /* Ajusta a altura máxima em relação à tela */
+    overflow-y: auto; /* Adiciona uma barra de rolagem se necessário */
+}
+
+
+#message-form {
+    max-width: 400px; /* Largura máxima desejada para o formulário */
+    margin: 0 auto; /* Centraliza o formulário na tela */
+    background-color: #000000; /* Fundo cinza claro */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 20px; /* Espaçamento interno */
+}
+
+#message-form label {
+    color: white; /* Fonte branca para rótulos */
+}
+
+#message-form input,
+#message-form select,
+#message-form button {
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    margin-bottom: 20px; /* Espaçamento inferior entre os elementos */
+    padding: 10px; /* Espaçamento interno */
+    border: none; /* Remove a borda padrão */
+    border-radius: 8px; /* Cantos arredondados para inputs e botões */
+}
+
+#message-form button {
+    background-color: #ffc220; /* Cor de fundo para o botão */
+    color: white; /* Cor do texto no botão */
+    cursor: pointer; /* Cursor ao passar sobre o botão */
+}
+
+#message-form button:hover {
+    background-color: rgb(52, 155, 52); /* Cor de fundo ao passar sobre o botão */
+}
+
+#new-message,
+#department,
+#file-upload,
+#add-message-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+#add-message-button {
+    background-color: #ffc220;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-message-button:hover {
+    background-color: #ffc220;
+}
+#show-form-toggle {
+    display: none; /* Esconde a checkbox */
+}
+
+#show-form-button {
+    cursor: pointer;
+    background-color: #ffc220;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#show-form-button:hover {
+    background-color: #ffc220;
+}
+
+#message-form {
+    display: none; /* Inicialmente, esconde o formulário */
+}
+
+#show-form-toggle:checked + #show-form-button + #message-form {
+    display: block; /* Mostra o formulário quando a checkbox está marcada */
+}
+
+.media-container {
+    max-width: 600px; /* Defina a largura máxima desejada para a área de mídia */
+    max-height: 400px;
+    margin: 20px auto; /* Centraliza a área de mídia e adiciona margem ao redor */
+    overflow: hidden; /* Evita que imagens ou vídeos maiores ultrapassem a área definida */
+}
+
+.media-container img,
+.media-container video {
+    width: 100%; /* Garante que a imagem ou vídeo ocupe 100% da largura da área de mídia */
+    height: auto; /* Mantém a proporção original da imagem ou vídeo */
+    display: block; /* Remove espaços indesejados abaixo da imagem ou vídeo */
+}
